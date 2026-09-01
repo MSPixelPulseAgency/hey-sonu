@@ -14,7 +14,7 @@ export function CatchBadge({ count, setCount }) {
   return (
     <section className="section section--catch" id="catch-badge">
       <div className="wrap catch-wrap">
-        <SectionHeading align="center" eyebrow="tiny initiative test" title="Okay Sonu… come collect your evidence 😏" copy="You said I have to earn it. I brought receipts." />
+        <SectionHeading align="center" eyebrow="tiny initiative test" title="Okay Sonu… come collect your evidence 😏" copy="At this point, the ‘My Sonu’ application has way too much supporting evidence 😂❤️" />
         <div className={`catch-window catch-window--step-${count}`}>
           <span className="catch-window__spark catch-window__spark--one" aria-hidden="true" />
           <span className="catch-window__spark catch-window__spark--two" aria-hidden="true" />

@@ -51,6 +51,7 @@ body {
   overflow-x: clip;
   background:
     radial-gradient(circle at 8% 4%, rgba(246, 199, 216, 0.36), transparent 25rem),
+    radial-gradient(circle at 52% 44%, rgba(255, 225, 235, 0.22), transparent 30rem),
     radial-gradient(circle at 92% 15%, rgba(203, 216, 244, 0.38), transparent 27rem),
     linear-gradient(180deg, var(--cream), #fff8f2 45%, #f8f2fb 100%);
   overscroll-behavior-y: contain;
@@ -344,6 +345,29 @@ p {
 .ambient__spark--one { top: 24%; left: 9%; }
 .ambient__spark--two { top: 51%; right: 13%; }
 .ambient__spark--three { bottom: 18%; left: 38%; }
+
+.ambient__heart {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  color: var(--rose);
+  opacity: 0.12;
+  animation: ambient-heart-drift 7s var(--ease-out) 1 both;
+}
+
+.ambient__heart path {
+  stroke: currentColor;
+  stroke-width: 1.2;
+}
+
+.ambient__heart--one { top: 18%; right: 5%; transform: rotate(10deg); }
+.ambient__heart--two { top: 58%; left: 4%; width: 34px; height: 34px; animation-delay: .7s; transform: rotate(-11deg); }
+.ambient__heart--three { right: 17%; bottom: 8%; width: 26px; height: 26px; animation-delay: 1.1s; transform: rotate(8deg); }
+
+@keyframes ambient-heart-drift {
+  from { opacity: 0; transform: translateY(10px) rotate(-4deg); }
+  to { opacity: .12; transform: translateY(0) rotate(8deg); }
+}
 
 @media (hover: hover) and (pointer: fine) {
   .button:hover {

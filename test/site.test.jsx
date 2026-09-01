@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs'
+import { readFileSync, statSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { afterEach, describe, expect, it } from 'vitest'
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
@@ -135,6 +135,13 @@ describe('WhatsApp draft', () => {
 })
 
 describe('render resilience, privacy and motion accessibility', () => {
+  it('keeps the Sonu File balanced and removes the dedicated spa section', () => {
+    const { container } = render(<App storageOverride={createMemoryStorage()} />)
+    expect(container.querySelectorAll('.file-card')).toHaveLength(8)
+    expect(screen.getByText('Future Spa Manager')).toBeVisible()
+    expect(screen.queryByRole('heading', { name: /future spa manager energy/i })).not.toBeInTheDocument()
+  })
+
   it('renders all four approved responsive portraits exactly once', () => {
     const { container } = render(<App storageOverride={createMemoryStorage()} />)
     const portraits = [...container.querySelectorAll('[data-photo-id] img')]
@@ -163,6 +170,15 @@ describe('render resilience, privacy and motion accessibility', () => {
     const html = readFileSync(resolve(process.cwd(), 'index.html'), 'utf8')
     expect(html).toContain('content="noindex,nofollow"')
     expect(html).toContain('https://my-sonu.vercel.app/')
+    expect(html).toContain('https://my-sonu.vercel.app/og-sonu.jpg')
+    expect(html).toContain('property="og:image:width" content="1200"')
+    expect(html).toContain('property="og:image:height" content="630"')
+    expect(html).toContain('property="og:image:type" content="image/jpeg"')
+    expect(html).toContain('name="twitter:image" content="https://my-sonu.vercel.app/og-sonu.jpg"')
+    expect(html).toContain('family=Caveat')
+    expect(html).toContain('family=Fraunces')
+    expect(html).toContain('family=DM+Sans')
     expect(html).toContain('/apple-touch-icon.png')
+    expect(statSync(resolve(process.cwd(), 'public/og-sonu.jpg')).size).toBeGreaterThan(50_000)
   })
 })

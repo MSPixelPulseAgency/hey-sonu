@@ -30,4 +30,4 @@ npm audit
 - GitHub: `MSPixelPulseAgency/hey-sonu`
 - Vercel project: `hey-sonu`
 - Preferred production: `https://my-sonu.vercel.app`
-- Previous production alias: `https://hey-sonu.vercel.app`
+- The previous `hey-sonu.vercel.app` alias was intentionally retired; do not restore it without explicit approval.

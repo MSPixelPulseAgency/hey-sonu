@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Check, Gift } from 'lucide-react'
+import { Check, Gift, Heart } from 'lucide-react'
 import { sonuFile } from '../data/sonuData'
 import { Reveal } from './Reveal'
 import { SectionHeading } from './SectionHeading'
@@ -33,8 +33,8 @@ export function SonuFile() {
             </Reveal>
           ))}
         </div>
+        <p className="hand-note file-love-note"><Heart size={18} aria-hidden="true" />I’m collecting reasons to like you faster than I expected 😌</p>
       </div>
     </section>
   )
 }
-

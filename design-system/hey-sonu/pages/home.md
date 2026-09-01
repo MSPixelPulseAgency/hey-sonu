@@ -5,7 +5,7 @@ This page override takes precedence over the generated master where the personal
 ## Direction
 
 - Cinematic near-black foundation, warm ivory type, muted wine and dusty rose, quiet champagne highlights, and a trace of Himalayan dusk blue.
-- Calm portrait-led editorial composition with spa-like breathing room; never a loud Valentine template.
+- Calm portrait-led editorial composition with generous breathing room; never a loud Valentine template.
 - The experience is direct, confident, respectful, and pressure-free. All relationship and tonight choices receive equal visual weight.
 
 ## Tokens
@@ -26,4 +26,3 @@ This page override takes precedence over the generated master where the personal
 - Motion uses only opacity and transforms, is interruptible, and is neutralized by `prefers-reduced-motion`.
 - Tilt is a fine-pointer enhancement only. Tap and keyboard paths remain complete.
 - Below-fold portraits are lazy and all images reserve their aspect ratio.
-

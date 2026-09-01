@@ -7,7 +7,6 @@ import { PrincessMoment } from './components/PrincessMoment'
 import { RealTalkVerdict } from './components/RealTalkVerdict'
 import { ScrollProgress } from './components/ScrollProgress'
 import { SonuFile } from './components/SonuFile'
-import { SpaMoment } from './components/SpaMoment'
 import { TonightChoice } from './components/TonightChoice'
 import { photos } from './data/sonuData'
 import { BADGE_CHOICES, getChoice, STORAGE_KEYS } from './lib/choices'
@@ -28,7 +27,6 @@ export default function App({ photosEnabled = true, storageOverride }) {
       <Hero photos={[photos[0], photos[1]]} photosEnabled={photosEnabled} badgeStatus={badgeStatus} />
       <main id="main-content">
         <SonuFile />
-        <SpaMoment />
         <RealTalkVerdict photo={photos[2]} photosEnabled={photosEnabled} />
         <CatchBadge count={catchCount} setCount={setCatchCount} />
         <BadgeDecision choice={badgeChoice} setChoice={setBadgeChoice} photosEnabled={photosEnabled} />

@@ -7,9 +7,7 @@
     padding-top: 58px;
   }
   .hero-collage { height: 575px; transform: scale(.9); transform-origin: right center; }
-  .file-grid { grid-template-columns: repeat(3, 1fr); }
-  .file-grid > div:last-child { grid-column: auto; }
-  .spa-layout { grid-template-columns: 1fr 360px; gap: 50px; }
+  .file-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .verdict-layout { gap: 52px; }
   .badge-layout { gap: 42px; }
 }
@@ -22,12 +20,7 @@
   .hero__copy .eyebrow, .hero__actions { justify-content: center; }
   .hero__copy h1, .hero__lead { margin-inline: auto; }
   .hero-collage { width: min(100%, 500px); height: 620px; margin: 26px auto 0; transform: none; }
-  .file-grid { grid-template-columns: repeat(2, 1fr); }
-  .file-grid > div:last-child { grid-column: 1 / -1; }
-  .file-grid > div:last-child .file-card { min-height: 165px; }
-  .spa-layout { grid-template-columns: 1fr; }
-  .spa-copy { max-width: 650px; }
-  .spa-still-life { width: min(100%, 500px); min-height: 410px; margin: 0 auto; }
+  .file-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .verdict-layout { grid-template-columns: 1fr; }
   .verdict-photo-wrap { width: min(76vw, 475px); margin: 0 auto; }
   .portrait--verdict { height: min(700px, 101vw); }
@@ -71,19 +64,12 @@
   .hero-status-card strong { font-size: .51rem; }
   .collage-note--photo { top: 46px; left: 0; width: 91px; font-size: 1.02rem; }
   .collage-heart { top: 90px; right: 0; transform: scale(.76) rotate(8deg); }
-  .file-grid { grid-template-columns: 1fr; gap: 12px; }
-  .file-grid > div:last-child { grid-column: auto; }
-  .file-card, .file-grid > div:last-child .file-card { min-height: 0; padding: 21px; }
+  .file-grid { grid-template-columns: 1fr; grid-auto-rows: auto; gap: 12px; }
+  .file-card { min-height: 0; padding: 21px; }
   .file-card__icon { margin-bottom: 20px; }
-  .spa-layout { gap: 42px; }
-  .spa-copy > p:not(.eyebrow):not(.hand-note) { font-size: 1rem; }
-  .spa-still-life { min-height: 345px; border-radius: 44% 44% 20px 20px; }
-  .spa-still-life__halo { top: 43px; width: 195px; height: 195px; }
-  .spa-icon { width: 52px; height: 52px; border-radius: 16px; }
-  .spa-icon--flower { top: 67px; left: 32px; }
-  .spa-icon--heart { top: 137px; right: 32px; }
-  .spa-cup { bottom: 50px; left: 46px; width: 100px; height: 73px; }
-  .spa-botanical { width: 155px; }
+  .file-love-note { align-items: flex-start; font-size: 1.5rem; }
+  .ambient__heart--three { display: none; }
+  .ambient__heart { opacity: .08; }
   .verdict-photo-wrap { width: min(88vw, 380px); padding: 9px 9px 38px; }
   .portrait--verdict { height: min(595px, 120vw); }
   .verdict-photo-note { right: 13px; bottom: 7px; }

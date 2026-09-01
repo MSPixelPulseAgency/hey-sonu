@@ -1,42 +1,47 @@
-import { Binoculars, CalendarHeart, Camera, Coffee, HeartHandshake, Mountain, Sparkles } from 'lucide-react'
+import { Binoculars, CalendarHeart, Camera, Coffee, Flower2, HeartHandshake, Mountain, Sparkles } from 'lucide-react'
 
 export const sonuFile = [
   {
     label: 'Nepalese',
-    copy: 'Explains why mountains entered the story before we even made a plan.',
+    copy: 'Somehow the mountains made it into the story before we even made a plan.',
     Icon: Mountain,
   },
   {
     label: 'October 14',
-    copy: 'Important information. Definitely not being quietly saved for later.',
+    copy: 'Apparently I remember more than I should 😂❤️',
     Icon: CalendarHeart,
     easterEgg: true,
   },
   {
     label: 'Black tea',
-    copy: 'Coffee negotiations have officially begun.',
+    copy: 'Black tea negotiations are still open 😏',
     Icon: Coffee,
     steam: true,
   },
   {
     label: 'Explorer',
-    copy: 'Banff was apparently the opening bid.',
+    copy: 'Banff somehow entered the conversation before we even made a plan.',
     Icon: Binoculars,
   },
   {
     label: 'Old-school',
-    copy: 'Less showing off. More actually living the moment.',
+    copy: 'Old-school enough to live the moment, modern enough to get a website.',
     Icon: Camera,
   },
   {
     label: 'Good heart > good photo',
-    copy: 'This one stayed with me.',
+    copy: 'This one really stayed with me ❤️',
     Icon: HeartHandshake,
   },
   {
     label: 'Shy',
-    copy: 'Which apparently makes me responsible for every first move.',
+    copy: 'Very convenient for someone who made me responsible for every first move 😌',
     Icon: Sparkles,
+  },
+  {
+    label: 'Future Spa Manager',
+    copy: 'That calm, caring energy makes the career choice feel very on-brand.',
+    Icon: Flower2,
   },
 ]
 
