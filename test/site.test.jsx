@@ -1,7 +1,7 @@
 import { readFileSync, statSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { afterEach, describe, expect, it } from 'vitest'
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import App from '../src/App'
 import {
   BADGE_CHOICES,
@@ -10,6 +10,7 @@ import {
   readStoredValue,
   STORAGE_KEYS,
   TONIGHT_CHOICES,
+  WHATSAPP_CTA_LABEL,
   WHATSAPP_NUMBER,
   writeStoredValue,
 } from '../src/lib/choices'
@@ -112,25 +113,67 @@ describe('local choice persistence', () => {
 })
 
 describe('WhatsApp draft', () => {
-  it('builds the exact reviewable copy for every tonight plan', () => {
+  it('builds the exact reviewable copy for every badge verdict and tonight plan', () => {
+    expect(WHATSAPP_NUMBER).toBe('+13658830338')
+    expect(BADGE_CHOICES.map(({ message }) => message)).toEqual([
+      'Okay Mahak… you officially earned the ‘My Sonu’ badge ❤️ I guess you can call me your Sonu now 😌',
+      'You’re almost there 😏 You haven’t fully earned your ‘My Sonu’ badge yet… impress me tonight ❤️',
+      'Not yet 😂❤️ You still have some work to do before I hand over the ‘My Sonu’ badge.',
+    ])
+    expect(TONIGHT_CHOICES.map(({ message }) => message)).toEqual([
+      'Dinner sounds good ❤️ Let’s figure out where and when 😊',
+      'Okay, I’m up for meeting you tonight 😌❤️',
+      'Let’s call tonight ❤️ Maybe you can earn a few more points there 😂',
+      'Not tonight, but I’d still like to plan something with you another time 😊❤️',
+    ])
+
+    for (const badge of BADGE_CHOICES) {
+      const message = buildWhatsAppMessage({ badgeId: badge.id })
+      const url = buildWhatsAppUrl({ badgeId: badge.id })
+
+      expect(message).toBe(badge.message)
+      expect(url).toBe(`https://wa.me/13658830338?text=${encodeURIComponent(badge.message)}`)
+    }
+
     for (const plan of TONIGHT_CHOICES) {
       const message = buildWhatsAppMessage({ planId: plan.id })
       const url = buildWhatsAppUrl({ planId: plan.id })
 
       expect(message).toBe(plan.message)
-      expect(url).toBe(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(plan.message)}`)
+      expect(url).toBe(`https://wa.me/13658830338?text=${encodeURIComponent(plan.message)}`)
     }
   })
 
-  it('opens an external draft and never implies automatic sending', () => {
-    render(<App storageOverride={createMemoryStorage()} />)
-    fireEvent.click(screen.getByRole('button', { name: BADGE_CHOICES[2].label }))
-    fireEvent.click(screen.getByRole('button', { name: /call tonight/i }))
-    const link = screen.getByRole('link', { name: /open your tonight answer as a whatsapp draft/i })
+  it('reveals one exact external draft for each badge verdict without auto-opening it', () => {
+    const { container } = render(<App storageOverride={createMemoryStorage()} />)
 
-    expect(link).toHaveAttribute('target', '_blank')
-    expect(link.getAttribute('href')).toBe(buildWhatsAppUrl({ planId: 'call' }))
-    expect(screen.getByText(/nothing sends automatically/i)).toBeVisible()
+    expect(container.querySelector('.decision-result')).not.toBeInTheDocument()
+    for (const badge of BADGE_CHOICES) {
+      fireEvent.click(screen.getByRole('button', { name: badge.label }))
+      const result = container.querySelector('.decision-result')
+      const link = within(result).getByRole('link', { name: new RegExp(badge.label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) })
+
+      expect(within(result).getAllByText(WHATSAPP_CTA_LABEL)).toHaveLength(1)
+      expect(link).toHaveAttribute('target', '_blank')
+      expect(link.getAttribute('href')).toBe(buildWhatsAppUrl({ badgeId: badge.id }))
+      expect(within(result).getByText(/nothing sends automatically/i)).toBeVisible()
+    }
+  })
+
+  it('reveals one exact external draft for each tonight answer without auto-sending', () => {
+    const { container } = render(<App storageOverride={createMemoryStorage()} />)
+    fireEvent.click(screen.getByRole('button', { name: BADGE_CHOICES[0].label }))
+
+    for (const plan of TONIGHT_CHOICES) {
+      fireEvent.click(screen.getByRole('button', { name: new RegExp(plan.label, 'i') }))
+      const result = container.querySelector('.plan-result')
+      const link = within(result).getByRole('link', { name: new RegExp(plan.label, 'i') })
+
+      expect(within(result).getAllByText(WHATSAPP_CTA_LABEL)).toHaveLength(1)
+      expect(link).toHaveAttribute('target', '_blank')
+      expect(link.getAttribute('href')).toBe(buildWhatsAppUrl({ planId: plan.id }))
+      expect(within(result).getByText(/nothing sends automatically/i)).toBeVisible()
+    }
   })
 })
 

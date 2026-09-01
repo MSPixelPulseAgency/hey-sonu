@@ -100,6 +100,7 @@
   .plan-card__icon { width: 45px; height: 45px; margin-bottom: 21px; }
   .later-choice { width: 100%; }
   .plan-result { grid-template-columns: 1fr; gap: 20px; padding: 22px 18px; }
+  .plan-result__copy { padding-right: 26px; }
   .plan-result .button { width: 100%; }
   .plan-result small { grid-column: auto; text-align: left; }
   .section--final { padding-top: 76px; }

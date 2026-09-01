@@ -10,18 +10,21 @@ export const BADGE_CHOICES = [
     label: 'Yes… you earned it ❤️',
     status: 'Officially approved by Sonu ❤️',
     line: 'You have no idea how proudly I’m wearing this.',
+    message: 'Okay Mahak… you officially earned the ‘My Sonu’ badge ❤️ I guess you can call me your Sonu now 😌',
   },
   {
     id: 'almost',
     label: 'Almost. Impress me tonight 😏',
     status: 'Final interview: tonight 😏',
     line: 'Okay, now you’re making this interesting.',
+    message: 'You’re almost there 😏 You haven’t fully earned your ‘My Sonu’ badge yet… impress me tonight ❤️',
   },
   {
     id: 'not-yet',
     label: 'Not yet 😂',
     status: 'Application still pending 😂',
     line: 'I clearly need a stronger portfolio.',
+    message: 'Not yet 😂❤️ You still have some work to do before I hand over the ‘My Sonu’ badge.',
   },
 ]
 
@@ -32,8 +35,7 @@ export const TONIGHT_CHOICES = [
     copy: 'Simple food, public place, easy conversation.',
     heading: 'Okay… now I actually have to impress you.',
     response: 'No giant plan. Just somewhere comfortable, good food, and me trying not to smile like an idiot when you show up.',
-    cta: 'Plan tonight on WhatsApp',
-    message: 'Okay Mahak 😌 dinner tonight sounds nice. Tell me what you’re thinking ❤️',
+    message: 'Dinner sounds good ❤️ Let’s figure out where and when 😊',
   },
   {
     id: 'meet',
@@ -41,8 +43,7 @@ export const TONIGHT_CHOICES = [
     copy: 'Tea, a walk, dessert — you choose what feels comfortable.',
     heading: 'Finally leaving the chat bubbles.',
     response: 'You choose what feels comfortable — tea, a walk, dessert, anything simple.',
-    cta: 'Plan our meet',
-    message: 'Okay Mahak 👀 I’m up for meeting tonight. Tell me the plan ❤️',
+    message: 'Okay, I’m up for meeting you tonight 😌❤️',
   },
   {
     id: 'call',
@@ -50,8 +51,7 @@ export const TONIGHT_CHOICES = [
     copy: 'If timing doesn’t work for meeting, at least let me finally hear you.',
     heading: 'Voice compatibility test unlocked.',
     response: 'You said you don’t like typing anyway 😂',
-    cta: 'Set up our call',
-    message: 'Okay Mahak 😌 call me tonight. Tell me when you’re free 📞',
+    message: 'Let’s call tonight ❤️ Maybe you can earn a few more points there 😂',
   },
   {
     id: 'later',
@@ -59,24 +59,26 @@ export const TONIGHT_CHOICES = [
     copy: 'No pressure. I meant that.',
     heading: 'No pressure. I meant that.',
     response: 'The invitation stays open whenever you feel comfortable.',
-    cta: 'Keep the invite open',
-    message: 'Not tonight 😌 but keep the invite open for me 🤍',
+    message: 'Not tonight, but I’d still like to plan something with you another time 😊❤️',
   },
 ]
 
-export const WHATSAPP_NUMBER = '13658830338'
+export const WHATSAPP_NUMBER = '+13658830338'
+export const WHATSAPP_CTA_LABEL = 'Send my answer to Mahak ❤️'
 
 export function getChoice(options, id) {
   return options.find((option) => option.id === id) ?? null
 }
 
-export function buildWhatsAppMessage({ planId }) {
+export function buildWhatsAppMessage({ badgeId, planId }) {
+  const badge = getChoice(BADGE_CHOICES, badgeId)
   const plan = getChoice(TONIGHT_CHOICES, planId)
-  return plan?.message ?? ''
+  return badge?.message ?? plan?.message ?? ''
 }
 
 export function buildWhatsAppUrl(selection) {
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildWhatsAppMessage(selection))}`
+  const recipient = WHATSAPP_NUMBER.replace(/\D/g, '')
+  return `https://wa.me/${recipient}?text=${encodeURIComponent(buildWhatsAppMessage(selection))}`
 }
 
 export function readStoredValue(storage, key, fallback) {

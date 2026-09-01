@@ -22,7 +22,7 @@ npm audit
 
 - The four portraits in `public/images/sonu/` are the only approved personal photos.
 - Do not add phone numbers, chat screenshots, exact addresses, exact workplaces, or other private details to visible copy.
-- The WhatsApp button only opens a prefilled draft. It never sends automatically.
+- Every badge verdict and tonight choice reveals exactly one matching WhatsApp draft button. Drafts never send automatically.
 - Badge, tonight plan, and game progress are stored only in the visitor's browser.
 
 ## Deployment

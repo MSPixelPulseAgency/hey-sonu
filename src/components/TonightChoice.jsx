@@ -1,6 +1,6 @@
-import { Footprints, MessageCircleHeart, Phone, Utensils } from 'lucide-react'
+import { Footprints, MessageCircleHeart, Phone, Sparkles, Utensils } from 'lucide-react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
-import { buildWhatsAppUrl, getChoice, TONIGHT_CHOICES } from '../lib/choices'
+import { buildWhatsAppUrl, getChoice, TONIGHT_CHOICES, WHATSAPP_CTA_LABEL } from '../lib/choices'
 import { SectionHeading } from './SectionHeading'
 import { Waveform } from './Waveform'
 
@@ -35,13 +35,14 @@ export function TonightChoice({ plan, setPlan }) {
         <AnimatePresence mode="wait">
           {selected && (
             <motion.div key={selected.id} className="plan-result" initial={reduceMotion ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={reduceMotion ? undefined : { opacity: 0 }}>
-              <div>
+              <span className="choice-confirmation" aria-hidden="true"><Sparkles size={15} /></span>
+              <div className="plan-result__copy" role="status">
                 <span>Your answer</span>
                 <h3>{selected.heading}</h3>
                 <p>{selected.response}</p>
               </div>
-              <a className="button button--whatsapp" href={buildWhatsAppUrl({ planId: selected.id })} target="_blank" rel="noreferrer" aria-label="Open your tonight answer as a WhatsApp draft">
-                <MessageCircleHeart size={19} aria-hidden="true" />{selected.cta}
+              <a className="button button--whatsapp" href={buildWhatsAppUrl({ planId: selected.id })} target="_blank" rel="noreferrer" aria-label={`Send “${selected.label}” to Mahak as a WhatsApp draft`}>
+                <MessageCircleHeart size={19} aria-hidden="true" />{WHATSAPP_CTA_LABEL}
               </a>
               <small>This opens a draft for you to review. Nothing sends automatically.</small>
             </motion.div>

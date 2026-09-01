@@ -1,7 +1,7 @@
-import { Heart, ShieldCheck, Sparkles } from 'lucide-react'
+import { Heart, MessageCircleHeart, ShieldCheck, Sparkles } from 'lucide-react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { photos } from '../data/sonuData'
-import { BADGE_CHOICES, getChoice } from '../lib/choices'
+import { BADGE_CHOICES, buildWhatsAppUrl, getChoice, WHATSAPP_CTA_LABEL } from '../lib/choices'
 import { Portrait } from './Portrait'
 import { Reveal } from './Reveal'
 import { SectionHeading } from './SectionHeading'
@@ -48,9 +48,16 @@ export function BadgeDecision({ choice, setChoice, photosEnabled }) {
             </div>
             <AnimatePresence mode="wait">
               {selected && (
-                <motion.div key={selected.id} className={`decision-result decision-result--${selected.id}`} role="status" initial={reduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={reduceMotion ? undefined : { opacity: 0 }}>
-                  <strong>{selected.status}</strong>
-                  <span>{selected.line}</span>
+                <motion.div key={selected.id} className={`decision-result decision-result--${selected.id}`} initial={reduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={reduceMotion ? undefined : { opacity: 0 }}>
+                  <span className="choice-confirmation" aria-hidden="true"><Sparkles size={15} /></span>
+                  <div className="decision-result__copy" role="status">
+                    <strong>{selected.status}</strong>
+                    <span>{selected.line}</span>
+                  </div>
+                  <a className="button button--whatsapp" href={buildWhatsAppUrl({ badgeId: selected.id })} target="_blank" rel="noreferrer" aria-label={`Send “${selected.label}” to Mahak as a WhatsApp draft`}>
+                    <MessageCircleHeart size={19} aria-hidden="true" />{WHATSAPP_CTA_LABEL}
+                  </a>
+                  <small>This opens a draft for you to review. Nothing sends automatically.</small>
                 </motion.div>
               )}
             </AnimatePresence>
