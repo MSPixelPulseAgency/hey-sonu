@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Heart with an S-shaped spark">
+  <defs>
+    <linearGradient id="wine" x1="10" y1="8" x2="52" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D48A97"/>
+      <stop offset="1" stop-color="#7D263B"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#171214"/>
+  <path d="M32 52.5C27.8 48.7 13 37.7 13 24.6 13 16.9 18.1 12 24.9 12c3.8 0 6.3 1.7 7.1 4.2.8-2.5 3.3-4.2 7.1-4.2C45.9 12 51 16.9 51 24.6 51 37.7 36.2 48.7 32 52.5Z" fill="url(#wine)"/>
+  <path d="M39.5 21.5c-2.1-2.1-6.8-1.7-8.8.7-2.5 3 1.2 5.5 4 6.9 3.2 1.6 5.1 4.1 3 7.1-2.2 3.2-7.7 3.5-10.5.5" fill="none" stroke="#F8EBDD" stroke-width="3.3" stroke-linecap="round"/>
+  <path d="M45.8 13.7l.9 2.2 2.2.9-2.2.9-.9 2.2-.9-2.2-2.2-.9 2.2-.9.9-2.2Z" fill="#E5C18B"/>
+</svg>
+

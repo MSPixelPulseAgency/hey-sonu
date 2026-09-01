@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">For Sonu</title>
+  <desc id="desc">A warm charcoal card with burgundy mist, a heart mark and a private note for Sonu.</desc>
+  <defs>
+    <radialGradient id="mist" cx="50%" cy="45%" r="70%">
+      <stop stop-color="#763246" stop-opacity=".82"/>
+      <stop offset=".5" stop-color="#2C1B21" stop-opacity=".66"/>
+      <stop offset="1" stop-color="#171214"/>
+    </radialGradient>
+    <linearGradient id="line" x1="0" x2="1">
+      <stop stop-color="#D7B27A" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#D7B27A"/>
+      <stop offset="1" stop-color="#D7B27A" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#mist)"/>
+  <circle cx="1020" cy="120" r="210" fill="#9F4960" opacity=".08"/>
+  <circle cx="180" cy="570" r="260" fill="#304A63" opacity=".09"/>
+  <path d="M600 229c-41-56-142-32-142 48 0 70 81 124 142 167 61-43 142-97 142-167 0-80-101-104-142-48Z" fill="none" stroke="#D39BA6" stroke-width="3" opacity=".42"/>
+  <path d="M627 266c-26-20-70-6-68 26 2 28 51 28 63 55 12 28-30 48-60 28" fill="none" stroke="#F7EBDD" stroke-width="7" stroke-linecap="round"/>
+  <path d="M681 232l5 12 12 5-12 5-5 12-5-12-12-5 12-5 5-12Z" fill="#D7B27A"/>
+  <rect x="330" y="504" width="540" height="2" fill="url(#line)"/>
+  <text x="600" y="110" text-anchor="middle" fill="#D7B27A" font-size="22" font-family="Arial, sans-serif" letter-spacing="7">A TINY CORNER OF THE INTERNET</text>
+  <text x="600" y="542" text-anchor="middle" fill="#F7EBDD" font-size="60" font-family="Georgia, serif">For Sonu</text>
+</svg>
+
