@@ -1,13 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Heart with an S-shaped spark">
-  <defs>
-    <linearGradient id="wine" x1="10" y1="8" x2="52" y2="58" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#D48A97"/>
-      <stop offset="1" stop-color="#7D263B"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="16" fill="#171214"/>
-  <path d="M32 52.5C27.8 48.7 13 37.7 13 24.6 13 16.9 18.1 12 24.9 12c3.8 0 6.3 1.7 7.1 4.2.8-2.5 3.3-4.2 7.1-4.2C45.9 12 51 16.9 51 24.6 51 37.7 36.2 48.7 32 52.5Z" fill="url(#wine)"/>
-  <path d="M39.5 21.5c-2.1-2.1-6.8-1.7-8.8.7-2.5 3 1.2 5.5 4 6.9 3.2 1.6 5.1 4.1 3 7.1-2.2 3.2-7.7 3.5-10.5.5" fill="none" stroke="#F8EBDD" stroke-width="3.3" stroke-linecap="round"/>
-  <path d="M45.8 13.7l.9 2.2 2.2.9-2.2.9-.9 2.2-.9-2.2-2.2-.9 2.2-.9.9-2.2Z" fill="#E5C18B"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Heart with the letter S">
+  <rect width="64" height="64" rx="18" fill="#FFF1F6"/>
+  <path d="M32 51C27 47 11 37 11 23.5 11 16.5 15.7 12 22.3 12c4.3 0 8 2.3 9.7 6 1.8-3.7 5.4-6 9.7-6C48.3 12 53 16.5 53 23.5 53 37 37 47 32 51Z" fill="#68436F"/>
+  <path d="M39.2 22.1c-1.6-2-4-3-7-3-4.7 0-7.5 2.5-7.5 5.8 0 3.6 2.9 5 6.8 6.3 3.2 1.1 4.4 1.8 4.4 3.4 0 1.5-1.4 2.6-3.7 2.6-2.7 0-5-1.2-6.7-3l-2.4 2.9c2.1 2.5 5.2 3.9 9 3.9 5.1 0 8-2.7 8-6.6 0-3.8-2.6-5.3-6.9-6.7-3.1-1-4.3-1.7-4.3-3 0-1.2 1.1-2.1 3.1-2.1 2.1 0 3.7.8 5 2.3l2.2-2.8Z" fill="#FFF9F1"/>
 </svg>
-

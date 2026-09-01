@@ -1,13 +1,13 @@
 {
   "name": "For Sonu",
-  "short_name": "For Sonu",
-  "description": "A tiny corner of the internet made for one unexpectedly interesting person.",
+  "short_name": "My Sonu",
+  "description": "A tiny romantic corner of the internet made for Sonu.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#171214",
-  "theme_color": "#171214",
+  "background_color": "#fffaf2",
+  "theme_color": "#fffaf2",
   "icons": [
-    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
   ]
 }
-

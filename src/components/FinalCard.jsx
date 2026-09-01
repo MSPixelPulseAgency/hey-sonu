@@ -6,12 +6,14 @@ export function FinalCard() {
     <footer className="section section--final">
       <div className="wrap">
         <Reveal className="final-card">
-          <p className="eyebrow"><Sparkles size={14} aria-hidden="true" />okay… website over</p>
-          <h2>Now I would rather talk to you.</h2>
-          <p>If you smiled even once while scrolling this, I am counting it as a successful deployment.</p>
-          <strong>— Mahak <Heart size={18} aria-label="with care" /></strong>
+          <img className="final-card__logo" src="/favicon.svg" alt="Sonu heart mark" width="58" height="58" />
+          <p className="eyebrow"><Sparkles size={14} aria-hidden="true" />one last thing, Sonu…</p>
+          <h2>I made all of this because you caught my attention.</h2>
+          <p>And I’d genuinely like the chance to keep it.</p>
+          <p className="hand-note final-card__hand">If you smiled even once… I’m counting this as a successful deployment.</p>
+          <strong>only for Sonu <Heart size={17} aria-label="with care" /></strong>
         </Reveal>
-        <p className="site-credit">Built with code, curiosity, and far too much initiative.</p>
+        <p className="site-credit">Made by Mahak with code, curiosity &amp; an increasingly obvious soft spot for you.</p>
       </div>
     </footer>
   )

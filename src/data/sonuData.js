@@ -1,4 +1,4 @@
-import { Binoculars, CalendarHeart, Camera, Coffee, HeartHandshake, Leaf, Mountain, Sparkles } from 'lucide-react'
+import { Binoculars, CalendarHeart, Camera, Coffee, HeartHandshake, Mountain, Sparkles } from 'lucide-react'
 
 export const sonuFile = [
   {
@@ -38,48 +38,20 @@ export const sonuFile = [
     copy: 'Which apparently makes me responsible for every first move.',
     Icon: Sparkles,
   },
-  {
-    label: 'Spa management',
-    copy: 'A calm, caring new chapter that feels very you.',
-    Icon: Leaf,
-  },
 ]
 
-export const whyCards = [
-  ['Your mindset', 'You care about heart before appearance. Rare enough to get my attention.'],
-  ['Your maturity', 'You speak simply, but there is thought behind it.'],
-  ['Your honesty', 'You do not try too hard to impress. Weirdly, that impressed me.'],
-  ['Your soft side', 'You value trust, care, support, and understanding.'],
-  ['Your new chapter', 'You are building something new for yourself with Spa Management. I like that energy.'],
+export const verdictNotes = [
+  ['That genuine mindset', 'Heart before appearance. That stayed with me.'],
+  ['Your maturity', 'Simple words, but there is always thought behind them.'],
+  ['The way you talk about trust', 'Care, understanding, and showing up properly.'],
+  ['Your calm, caring side', 'The kind of energy that makes people feel comfortable.'],
+  ['Final verdict', 'I want more of your time — preferably away from a keyboard.'],
 ]
 
-export const compatibility = [
-  ['Black tea / coffee', 'Negotiable.'],
-  ['Non-veg / BBQ', 'Promising.'],
-  ['Occasional drink', 'Rooftop plan remains operational.'],
-  ['Old-school', 'Suspiciously similar.'],
-  ['Camera roll', 'Both prefer memories over proof.'],
-  ['Work schedule', 'Potentially compatible.'],
-  ['Distance', 'Close enough to make a simple plan feel easy.'],
-  ['Foggy weather', 'The weather got cinematic the same day our conversation did.'],
-]
-
-export const gameQuestions = [
-  {
-    id: 'trust',
-    prompt: 'What earns trust?',
-    options: ['Consistency', 'Pretty words', 'Disappearing for 3 business days'],
-  },
-  {
-    id: 'moment',
-    prompt: 'What beats a perfect picture?',
-    options: ['A genuine moment', '47 filters', 'Obviously another picture of food'],
-  },
-  {
-    id: 'initiate',
-    prompt: 'What should Mahak initiate next?',
-    options: ['A call', 'Dinner', 'Surprise me'],
-  },
+export const badgeEvidence = [
+  'I remembered the little things.',
+  'I listened when you talked about trust, care and understanding.',
+  'And apparently I’m brave enough to build a website about it 😂',
 ]
 
 export const photos = [

@@ -23,11 +23,11 @@ npm audit
 - The four portraits in `public/images/sonu/` are the only approved personal photos.
 - Do not add phone numbers, chat screenshots, exact addresses, exact workplaces, or other private details to visible copy.
 - The WhatsApp button only opens a prefilled draft. It never sends automatically.
-- All choices are equal and stored only in the visitor's browser.
+- Badge, tonight plan, and game progress are stored only in the visitor's browser.
 
 ## Deployment
 
 - GitHub: `MSPixelPulseAgency/hey-sonu`
 - Vercel project: `hey-sonu`
-- Production: `https://hey-sonu.vercel.app`
-
+- Preferred production: `https://my-sonu.vercel.app`
+- Previous production alias: `https://hey-sonu.vercel.app`

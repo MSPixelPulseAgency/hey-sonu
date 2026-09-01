@@ -1,26 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">For Sonu</title>
-  <desc id="desc">A warm charcoal card with burgundy mist, a heart mark and a private note for Sonu.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
-    <radialGradient id="mist" cx="50%" cy="45%" r="70%">
-      <stop stop-color="#763246" stop-opacity=".82"/>
-      <stop offset=".5" stop-color="#2C1B21" stop-opacity=".66"/>
-      <stop offset="1" stop-color="#171214"/>
-    </radialGradient>
-    <linearGradient id="line" x1="0" x2="1">
-      <stop stop-color="#D7B27A" stop-opacity="0"/>
-      <stop offset=".5" stop-color="#D7B27A"/>
-      <stop offset="1" stop-color="#D7B27A" stop-opacity="0"/>
-    </linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFF9F0"/><stop offset=".52" stop-color="#FFF0F6"/><stop offset="1" stop-color="#EDE8FA"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#68436F" flood-opacity=".18"/></filter>
   </defs>
-  <rect width="1200" height="630" fill="url(#mist)"/>
-  <circle cx="1020" cy="120" r="210" fill="#9F4960" opacity=".08"/>
-  <circle cx="180" cy="570" r="260" fill="#304A63" opacity=".09"/>
-  <path d="M600 229c-41-56-142-32-142 48 0 70 81 124 142 167 61-43 142-97 142-167 0-80-101-104-142-48Z" fill="none" stroke="#D39BA6" stroke-width="3" opacity=".42"/>
-  <path d="M627 266c-26-20-70-6-68 26 2 28 51 28 63 55 12 28-30 48-60 28" fill="none" stroke="#F7EBDD" stroke-width="7" stroke-linecap="round"/>
-  <path d="M681 232l5 12 12 5-12 5-5 12-5-12-12-5 12-5 5-12Z" fill="#D7B27A"/>
-  <rect x="330" y="504" width="540" height="2" fill="url(#line)"/>
-  <text x="600" y="110" text-anchor="middle" fill="#D7B27A" font-size="22" font-family="Arial, sans-serif" letter-spacing="7">A TINY CORNER OF THE INTERNET</text>
-  <text x="600" y="542" text-anchor="middle" fill="#F7EBDD" font-size="60" font-family="Georgia, serif">For Sonu</text>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1110" cy="80" r="170" fill="#DCE6FF" opacity=".7"/>
+  <circle cx="70" cy="565" r="230" fill="#F8CDD9" opacity=".65"/>
+  <g filter="url(#shadow)"><rect x="836" y="115" width="220" height="220" rx="54" fill="#FFF9F1"/><path d="M946 295c-24-19-76-55-76-102 0-27 18-45 43-45 16 0 29 9 36 23 7-14 20-23 36-23 25 0 43 18 43 45 0 47-57 83-82 102Z" fill="#68436F"/><text x="947" y="232" text-anchor="middle" font-family="Georgia, serif" font-size="62" font-weight="700" fill="#FFF9F1">S</text></g>
+  <text x="112" y="180" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="4" fill="#8B668B">FOR ONE GIRL WHO SAID</text>
+  <text x="106" y="294" font-family="Georgia, serif" font-size="86" font-weight="600" fill="#4D315F">Sonu… I took</text>
+  <text x="106" y="392" font-family="Georgia, serif" font-size="86" font-weight="600" fill="#4D315F">that personally.</text>
+  <text x="112" y="478" font-family="Arial, sans-serif" font-size="29" fill="#6F5C70">A tiny corner of the internet made with suspicious initiative.</text>
+  <text x="111" y="553" font-family="cursive" font-size="32" fill="#A14E70">only for Sonu</text>
 </svg>
-

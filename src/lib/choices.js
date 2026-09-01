@@ -1,69 +1,67 @@
 export const STORAGE_KEYS = {
   badge: 'hey-sonu:badge',
   plan: 'hey-sonu:tonight',
-  availability: 'hey-sonu:availability',
-  game: 'hey-sonu:game',
+  catchCount: 'hey-sonu:catch-count',
 }
 
 export const BADGE_CHOICES = [
   {
     id: 'yes',
-    label: 'Yes, you earned it',
-    iconLabel: 'heart',
-    status: 'Officially approved by Sonu',
-    line: 'Okay… I am definitely smiling now.',
-    message: "Okay Mahak 😂❤️ you earned the ‘My Sonu’ badge.",
+    label: 'Yes… you earned it ❤️',
+    status: 'Officially approved by Sonu ❤️',
+    line: 'You have no idea how proudly I’m wearing this.',
   },
   {
     id: 'almost',
-    label: 'Almost… keep trying',
-    iconLabel: 'smile',
-    status: 'Still under review',
-    line: 'Challenge accepted. I will keep earning it.',
-    message: "You’re close 😌 keep earning that ‘My Sonu’ badge.",
+    label: 'Almost. Impress me tonight 😏',
+    status: 'Final interview: tonight 😏',
+    line: 'Okay, now you’re making this interesting.',
   },
   {
     id: 'not-yet',
-    label: 'Not yet, mister',
-    iconLabel: 'laugh',
-    status: 'Application still pending',
-    line: 'Fair. I will behave… mostly.',
-    message: "Not yet mister 😂 your ‘My Sonu’ application is still pending.",
+    label: 'Not yet 😂',
+    status: 'Application still pending 😂',
+    line: 'I clearly need a stronger portfolio.',
   },
 ]
 
 export const TONIGHT_CHOICES = [
   {
+    id: 'dinner',
+    label: 'Dinner tonight',
+    copy: 'Simple food, public place, easy conversation.',
+    heading: 'Okay… now I actually have to impress you.',
+    response: 'No giant plan. Just somewhere comfortable, good food, and me trying not to smile like an idiot when you show up.',
+    cta: 'Plan tonight on WhatsApp',
+    message: 'Okay Mahak 😌 dinner tonight sounds nice. Tell me what you’re thinking ❤️',
+  },
+  {
+    id: 'meet',
+    label: 'Meet me tonight',
+    copy: 'Tea, a walk, dessert — you choose what feels comfortable.',
+    heading: 'Finally leaving the chat bubbles.',
+    response: 'You choose what feels comfortable — tea, a walk, dessert, anything simple.',
+    cta: 'Plan our meet',
+    message: 'Okay Mahak 👀 I’m up for meeting tonight. Tell me the plan ❤️',
+  },
+  {
     id: 'call',
     label: 'Call tonight',
-    copy: 'Nothing formal. Just finally hear each other properly.',
-    message: 'Okay Mahak 😌 call me tonight. Tell me when you’re free 📞❤️',
+    copy: 'If timing doesn’t work for meeting, at least let me finally hear you.',
+    heading: 'Voice compatibility test unlocked.',
+    response: 'You said you don’t like typing anyway 😂',
+    cta: 'Set up our call',
+    message: 'Okay Mahak 😌 call me tonight. Tell me when you’re free 📞',
   },
   {
-    id: 'video',
-    label: 'Quick video call',
-    copy: 'Five minutes that will probably become thirty.',
-    message: 'Okay 😂 a quick video call tonight sounds cute. Tell me when you’re free 👀',
+    id: 'later',
+    label: 'Another day is okay too',
+    copy: 'No pressure. I meant that.',
+    heading: 'No pressure. I meant that.',
+    response: 'The invitation stays open whenever you feel comfortable.',
+    cta: 'Keep the invite open',
+    message: 'Not tonight 😌 but keep the invite open for me 🤍',
   },
-  {
-    id: 'dinner',
-    label: 'Dinner after work',
-    copy: 'Simple dinner, easy conversation.',
-    message: 'If timing works, I’m up for dinner after work 😊 Tell me your plan.',
-  },
-  {
-    id: 'chat',
-    label: 'Keep talking for now',
-    copy: 'No rush. I am still enjoying this.',
-    message: 'Not tonight 😌 but keep talking to me here/WhatsApp 🤍',
-  },
-]
-
-export const AVAILABILITY_CHOICES = [
-  'After work',
-  'After dinner',
-  'Later tonight',
-  'I’ll tell you on WhatsApp',
 ]
 
 export const WHATSAPP_NUMBER = '13658830338'
@@ -72,16 +70,9 @@ export function getChoice(options, id) {
   return options.find((option) => option.id === id) ?? null
 }
 
-export function buildWhatsAppMessage({ badgeId, planId, availability }) {
-  const badge = getChoice(BADGE_CHOICES, badgeId)
+export function buildWhatsAppMessage({ planId }) {
   const plan = getChoice(TONIGHT_CHOICES, planId)
-  const parts = [badge?.message, plan?.message]
-
-  if (availability && availability !== 'I’ll tell you on WhatsApp') {
-    parts.push(`I’m usually free ${availability.toLowerCase()}.`)
-  }
-
-  return parts.filter(Boolean).join('\n\n')
+  return plan?.message ?? ''
 }
 
 export function buildWhatsAppUrl(selection) {
@@ -108,4 +99,3 @@ export function writeStoredValue(storage, key, value) {
     // Browser privacy settings can block storage. The interaction still works in memory.
   }
 }
-
